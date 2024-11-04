@@ -33,10 +33,10 @@ class IrPluginTest {
       sourceFile = SourceFile.kotlin(
         "main.kt", """
 fun main() {
-  println(debug())
+  println(evalDebug())
 }
 
-fun debug() = "Hello, World!"
+fun evalDebug() = "Hello, World!"
 """
       )
     )

@@ -28,7 +28,9 @@ class ConstEvalIrGenerationExtension(
   private val file: String
 ) : IrGenerationExtension {
   override fun generate(moduleFragment: IrModuleFragment, pluginContext: IrPluginContext) {
-    messageCollector.report(CompilerMessageSeverity.INFO, "Argument 'string' = $string")
-    messageCollector.report(CompilerMessageSeverity.INFO, "Argument 'file' = $file")
+//    messageCollector.report(CompilerMessageSeverity.INFO, "Argument 'string' = $string")
+//    messageCollector.report(CompilerMessageSeverity.INFO, "Argument 'file' = $file")
+
+    moduleFragment.accept(ConstSubsTransformer(pluginContext), false);
   }
 }
