@@ -15,7 +15,7 @@ import java.io.File
 import java.io.IOException
 import kotlin.io.path.createTempDirectory
 
-class ConstSubsTransformer(private val pluginContext: IrPluginContext): IrElementTransformer<Boolean> {
+class ConstEvalTransformer(private val pluginContext: IrPluginContext): IrElementTransformer<Boolean> {
   private var evalFunCorrect: Boolean = true // only meaningful when inside an eval function or just came out of one
   private val workingDir = createTempDirectory()
 
